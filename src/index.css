@@ -1,12 +1,12 @@
-body{
-    background-image: url('src/assets/a (1).jpg');
+body {
+    background-image: url('src/assets/a-1.jpg');
     /* background-image: url('src/assets/a (2).jpg'); */
     /* background-image: url('src/assets/a (3).jpg'); */
     /* background-image: url('src/assets/a (4).jpg'); */
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        height: 110vh;
-        margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 110vh;
+    margin: 0;
 
-    }
+}
