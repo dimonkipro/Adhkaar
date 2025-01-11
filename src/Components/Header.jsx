@@ -12,7 +12,7 @@ const tabsConfig = [
   { name: "أذكار الصباح", component: <Morning /> },
   { name: "أذكار المساء", component: <Evening /> },
   { name: "أذكار النوم", component: <Night /> },
-  { name: "أذكار بعد السلام من الصلاة ", component: <After_pray /> },
+  { name: "أذكار بعد الصلاة ", component: <After_pray /> },
   { name: "تسابيح", component: <Tasbih /> },
   { name: "أذكار الاستيقاظ", component: <Waking /> },
   { name: "أدعية قرآنية", component: <Quran /> },

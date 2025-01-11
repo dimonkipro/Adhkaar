@@ -19,6 +19,8 @@ const Card = ({ data }) => {
     }
   };
 
+  
+
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? data.length - 1 : prevIndex - 1
@@ -71,26 +73,37 @@ const Card = ({ data }) => {
         </h2>
       </div>
 
-      {/* Count Button */}
-      <div className="buttons d-flex justify-content-center align-items-center ">
-        <button onClick={handleCount} className="btn btn-secondary m-2">
+      {/* BUTTONS  */}
+      <div className="buttons d-flex justify-content-evenly align-items-center ">
+        {/* Previous Button */}
+        <button
+          onClick={handlePrevious}
+          className="btn m-2 rounded-5 fs-5"
+          style={{ backgroundColor: "#489a74" }}
+        >
+          {"< السّابق"}
+        </button>
+
+        {/* Count Button */}
+        <button
+          onClick={handleCount}
+          className="btn btn-secondary fw-bolder fs-4 m-2 rounded-4"
+        >
           count
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={handleNext}
+          className="btn m-2 rounded-5 fs-5"
+          style={{ backgroundColor: "#489a74" }}
+        >
+          {"التّالي >"}
         </button>
       </div>
 
-      <div className="container col-8 d-flex justify-content-center">
-        {/* Previous Button */}
-
-        <button
-          onClick={handlePrevious}
-          className="btn m-2 fw-bolder fs-1 rounded-5"
-          style={{ backgroundColor: "#489a74" }}
-        >
-          {"<"}
-        </button>
-
-        {/* Card */}
-
+      {/* Card */}
+      <div className="container col-12 col-lg-8 d-flex justify-content-center">
         <div className="card text-center rounded-5 shadow-lg col-12 mx-2">
           {/* Counter */}
 
@@ -118,29 +131,24 @@ const Card = ({ data }) => {
           </div>
 
           {/* card body */}
-          <div className="card-body">
-            <p
-              className="card-text fs-4 font-monospace fw-bold"
-              style={{ wordSpacing: "4px", lineHeight: "2" }}
-            >
-              {data[currentIndex].content}
-            </p>
-          </div>
 
-          {/* card footer */}
-          <div className="card-footer text-body-secondary ">
-            <p>{data[currentIndex].description}</p>
+          <div className="card-body">
+            <figure className="text-center">
+              <blockquote
+                className="blockquote"
+                style={{ wordSpacing: "3px", lineHeight: "2" }}
+              >
+                <p>{data[currentIndex].content}</p>
+              </blockquote>
+              <figcaption className="blockquote-footer">
+                {data[currentIndex].reference}
+                <cite title="Source Title">
+                  {data[currentIndex].description}
+                </cite>
+              </figcaption>
+            </figure>
           </div>
         </div>
-
-        {/* Next Button */}
-        <button
-          onClick={handleNext}
-          className="btn m-2 fw-bolder fs-1 rounded-5"
-          style={{ backgroundColor: "#489a74" }}
-        >
-          {">"}
-        </button>
       </div>
     </>
   );
