@@ -13,8 +13,15 @@ const Card = ({ data }) => {
     } else {
       setCurrentCount(targetCount); // Ensure progress bar reaches 100%
       setTimeout(() => {
-        setCurrentCount(0);
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+        if (currentIndex + 1 === data.length) {
+          setCurrentIndex(0)
+          setCurrentCount(0);
+          return alert("نهاية الأذكار");
+        }else{
+          setCurrentCount(0);
+          setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+
+        }
       }, 700); // Delay for 700ms
     }
   };
@@ -29,8 +36,14 @@ const Card = ({ data }) => {
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
-    setCurrentCount(0);
+     if (currentIndex + 1 === data.length) {
+       setCurrentIndex(0);
+       setCurrentCount(0);
+       return alert("نهاية الأذكار");
+     } else {
+       setCurrentIndex((prevIndex) => (prevIndex + 1) % data.length);
+       setCurrentCount(0);
+     }
   };
 
   const targetCount = parseInt(data[currentIndex].count, 10);
