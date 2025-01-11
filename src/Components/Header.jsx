@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg border-bottom sticky-top shadow-sm">
+      <nav className="navbar navbar-expand-lg border-bottom shadow-sm">
         <div className="container-fluid">
           {/* Navbar Toggler for Mobile View */}
           <button
